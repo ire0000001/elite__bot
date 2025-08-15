@@ -1,6 +1,6 @@
 import aiohttp
 from ..news_hooks import fetch_newsapi
-from ..config import ODDSAPI_KEY, API_BASKETBALL_KEY
+from ..config import ODDSAPI_KEY, API_BASKETBALL_KEY, NEWSAPI_KEY, X_BEARER_TOKEN
 
 async def get_team_form(team_id):
     url=f"https://api-basketball.p.rapidapi.com/games"
@@ -52,4 +52,3 @@ async def scan():
                     "reasons":["Odds data",f"Form:{round(form_home,1)}-{round(form_away,1)}",f"Player impact:{player_impact}"]+news_signals
                 })
     return picks
-
